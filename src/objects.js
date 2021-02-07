@@ -23,9 +23,9 @@ const UserObject = {
 
     const edges = filteredRobots.map((robot) => ({ node: robot }));
 
-    cursor = encode(edges[edges.length - 1]?.node?.id, "Robot");
-    console.log(edges);
-    console.log(cursor);
+    const cursorId = edges[edges.length - 1]?.node?.id;
+    cursor = cursorId ? encode(cursorId, "Robot") : null;
+
     return {
       cursor,
       edges,
