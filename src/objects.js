@@ -10,6 +10,7 @@ const UserObject = {
     const allRobots = obj.robots
       .map((id) => Robot.findById(id))
       .filter((robot) => !!robot);
+    let cursor;
 
     let filteredRobots = allRobots;
     if (args.first) {
@@ -21,8 +22,9 @@ const UserObject = {
     }
 
     const edges = filteredRobots.map((robot) => ({ node: robot }));
-    cursor = edges[edges.length - 1]?.id;
 
+    cursor = encode(edges[edges.length - 1]?.node?.id, "Robot");
+    console.log(edges);
     console.log(cursor);
     return {
       cursor,
