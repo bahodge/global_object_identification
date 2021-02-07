@@ -1,0 +1,16 @@
+{
+  "name": "global_object_identification",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./src/index",
+    "start:dev": "nodemon src/"
+  },
+  "dependencies": {
+    "apollo-server": "^2.19.2",
+    "graphql": "^15.5.0",
+    "nodemon": "^2.0.7",
+    "uuidv4": "^6.2.6"
+  }
+}
